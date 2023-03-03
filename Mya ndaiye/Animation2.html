@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation2</title>
+    <style>
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            text-align: center;  
+            align-items: center;
+        }
+        .d1{
+           height: 100px;
+           width: 300px;
+          border: 5px solid rgb(153, 153, 154);
+          margin: 0 auto;
+          font-size: 40px;
+          color: red;
+          position: relative;
+         text-align: center;
+         align-items: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         z-index: 4;
+         overflow: hidden;
+        }
+        .d1::after
+        {
+            content: "";
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            transform-origin: bottom right;
+            transform: rotate(90deg);
+            bottom: 0;
+            right: 0;
+            transition: 2s;  
+        }
+        .d1::before
+        {
+            content: "";
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            bottom:0;
+            left:0;
+            transform-origin: bottom left;
+            transform: rotate(-90deg);
+            transition: 2s;
+        }
+        .d1:hover::before
+        {
+            transform: rotate(0);
+        }
+        .d1:hover::after{
+            transform: rotate(0);
+        }
+        .texte{
+            z-index: 4;
+        }
+        .texte:hover{
+           color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container"> 
+    
+        <div class="d1">
+            <span class="texte">
+            
+            Hoverable
+            </span>
+        </div>
+ 
+</div>
+</body>
+</html>

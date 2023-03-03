@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animation5</title>
+    <style>
+#conte
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(71, 69, 69);
+    display: flex;
+}
+#carre1
+{
+    position: relative;
+    background-color: red;
+    width: 30%;
+    height: 25%;
+    margin: auto;
+    border: 10px solid grey;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#carre1 > p
+{
+    color: white;
+    font-size: 4em;
+}
+#carre1::before
+{
+    position: absolute;
+    content: "";
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    right: 10;
+    transition: 0.1s ease-in-out;
+    z-index: 100;
+}
+#carre1::after
+{
+    transform: rotateZ(45deg);
+    position: absolute;
+    content: "";
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    left: -50%;
+    bottom: -25%;
+    transition: 0.1s ease-in-out;
+}
+#carre1:hover::after 
+{
+    bottom: 100%;
+    left: 50%;
+}
+#carre1:hover::before
+{
+    transition-duration: 1s;
+    background-color: black;
+}
+    </style>
+</head>
+<body>
+    <div id="conte">
+        <div id="carre1"> <p class="pa">HOVERABLE</p> </div>
+    </div>
+</body>
+</html>
